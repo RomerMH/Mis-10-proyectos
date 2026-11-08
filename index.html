@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 10 Proyectos JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>El Reto de los 10 Proyectos de JavaScript</h1>
+        <p>Autor: Romer Moncayo</p>
+    </header>
+
+    <nav id="menu">
+        <button onclick="mostrarSeccion('p1')" class="activo">1. Contador</button>
+        <button onclick="mostrarSeccion('p2')">2. Tareas</button>
+        <button onclick="mostrarSeccion('p3')">3. Adivina</button>
+        <button onclick="mostrarSeccion('p4')">4. Calc</button>
+        <button onclick="mostrarSeccion('p5')">5. Colores</button>
+        <button onclick="mostrarSeccion('p6')">6. Timer</button>
+        <button onclick="mostrarSeccion('p7')">7. Pass</button>
+        <button onclick="mostrarSeccion('p8')">8. Tema</button>
+        <button onclick="mostrarSeccion('p9')">9. PPT</button>
+        <button onclick="mostrarSeccion('p10')">10. Galería</button>
+    </nav>
+
+    <main>
+        <section id="p1" class="proyecto activo-sec">
+            <h2>1. Contador Inteligente</h2>
+            <h3 id="numContador">0</h3>
+            <button onclick="cambiarContador(1)">+1</button>
+            <button onclick="cambiarContador(-1)">-1</button>
+            <button onclick="cambiarContador(0)">Reiniciar</button>
+        </section>
+
+        <section id="p2" class="proyecto">
+            <h2>2. Lista de Tareas</h2>
+            <input type="text" id="inputTarea" placeholder="Nueva tarea...">
+            <button onclick="agregarTarea()">Agregar</button>
+            <ul id="listaTareas"></ul>
+        </section>
+
+        <section id="p3" class="proyecto">
+            <h2>3. Adivina el Número (1-100)</h2>
+            <input type="number" id="inputAdivina" placeholder="Tu número">
+            <button onclick="adivinarNumero()">Adivinar</button>
+            <p id="mensajeAdivina">Escribe un número y prueba suerte.</p>
+            <button onclick="reiniciarJuegoAdivina()">Nuevo Juego</button>
+        </section>
+
+        <section id="p4" class="proyecto">
+            <h2>4. Calculadora Básica</h2>
+            <input type="text" id="pantallaCalc" readonly value="0">
+            <div class="teclado-calc">
+                <button onclick="agregarCalc('1')">1</button>
+                <button onclick="agregarCalc('2')">2</button>
+                <button onclick="agregarCalc('3')">3</button>
+                <button onclick="agregarCalc('+')">+</button>
+                <button onclick="agregarCalc('4')">4</button>
+                <button onclick="agregarCalc('5')">5</button>
+                <button onclick="agregarCalc('6')">6</button>
+                <button onclick="agregarCalc('-')">-</button>
+                <button onclick="agregarCalc('7')">7</button>
+                <button onclick="agregarCalc('8')">8</button>
+                <button onclick="agregarCalc('9')">9</button>
+                <button onclick="agregarCalc('*')">*</button>
+                <button onclick="limpiarCalc()">C</button>
+                <button onclick="agregarCalc('0')">0</button>
+                <button onclick="calcularResultado()">=</button>
+                <button onclick="agregarCalc('/')">/</button>
+            </div>
+        </section>
+
+        <section id="p5" class="proyecto">
+            <h2>5. Cambiador de Colores</h2>
+            <div id="cajaColor" style="padding: 20px; background: #ddd; margin: 10px 0;">
+                <p id="codigoHex">#dddddd</p>
+            </div>
+            <button onclick="cambiarColorAleatorio()">Cambiar Color</button>
+            <button onclick="copiarColor()">Copiar Código</button>
+        </section>
+
+        <section id="p6" class="proyecto">
+            <h2>6. Temporizador</h2>
+            <h3 id="displayTimer">01:00</h3>
+            <button onclick="iniciarTimer()">Iniciar</button>
+            <button onclick="pausarTimer()">Pausar</button>
+            <button onclick="reiniciarTimer()">Reiniciar</button>
+        </section>
+
+        <section id="p7" class="proyecto">
+            <h2>7. Generador de Contraseñas</h2>
+            <input type="text" id="inputPass" readonly placeholder="Tu contraseña">
+            <button onclick="generarPassword()">Generar</button>
+        </section>
+
+        <section id="p8" class="proyecto">
+            <h2>8. Modo Oscuro / Claro</h2>
+            <div class="tarjeta-modo">
+                <p>Prueba el interruptor para cambiar el diseño general.</p>
+                <button onclick="toggleModoOscuro()">Cambiar Tema</button>
+            </div>
+        </section>
+
+        <section id="p9" class="proyecto">
+            <h2>9. Piedra, Papel o Tijera</h2>
+            <button onclick="jugarPPT('Piedra')">✊ Piedra</button>
+            <button onclick="jugarPPT('Papel')">✋ Papel</button>
+            <button onclick="jugarPPT('Tijera')">✌️ Tijera</button>
+            <p id="resultadoPPT">Elige una opción</p>
+        </section>
+
+        <section id="p10" class="proyecto">
+            <h2>10. Galería de Imágenes</h2>
+            <div class="galeria">
+                <img src="https://picsum.photos/id/237/200/150" alt="Perro">
+                <img src="https://picsum.photos/id/1025/200/150" alt="Oso">
+                <img src="https://picsum.photos/id/1074/200/150" alt="León">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Romer Moncayo - 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
